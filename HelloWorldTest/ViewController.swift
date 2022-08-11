@@ -15,5 +15,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func showButtonAction(sender:UIButton){
+        print(sender.titleLabel)
+    }
 }
 
