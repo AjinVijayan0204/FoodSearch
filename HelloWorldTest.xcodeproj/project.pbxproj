@@ -13,6 +13,7 @@
 		871CD47C28A4FC8400782897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CD47A28A4FC8400782897 /* Main.storyboard */; };
 		871CD47E28A4FC8400782897 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871CD47D28A4FC8400782897 /* Assets.xcassets */; };
 		871CD48128A4FC8400782897 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CD47F28A4FC8400782897 /* LaunchScreen.storyboard */; };
+		871CD48928A6522B00782897 /* RestaurentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD48828A6522B00782897 /* RestaurentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		871CD47D28A4FC8400782897 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		871CD48028A4FC8400782897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		871CD48228A4FC8400782897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		871CD48828A6522B00782897 /* RestaurentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				871CD47D28A4FC8400782897 /* Assets.xcassets */,
 				871CD47F28A4FC8400782897 /* LaunchScreen.storyboard */,
 				871CD48228A4FC8400782897 /* Info.plist */,
+				871CD48828A6522B00782897 /* RestaurentTableViewController.swift */,
 			);
 			path = HelloWorldTest;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				871CD47928A4FC8400782897 /* ViewController.swift in Sources */,
 				871CD47528A4FC8400782897 /* AppDelegate.swift in Sources */,
+				871CD48928A6522B00782897 /* RestaurentTableViewController.swift in Sources */,
 				871CD47728A4FC8400782897 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
