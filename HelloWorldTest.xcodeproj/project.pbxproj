@@ -14,6 +14,8 @@
 		871CD47E28A4FC8400782897 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871CD47D28A4FC8400782897 /* Assets.xcassets */; };
 		871CD48128A4FC8400782897 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CD47F28A4FC8400782897 /* LaunchScreen.storyboard */; };
 		871CD48928A6522B00782897 /* RestaurentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD48828A6522B00782897 /* RestaurentTableViewController.swift */; };
+		871CD48C28A68A0300782897 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD48B28A68A0300782897 /* FoodTableViewController.swift */; };
+		871CD48E28A68A8000782897 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD48D28A68A8000782897 /* FoodTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		871CD48028A4FC8400782897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		871CD48228A4FC8400782897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		871CD48828A6522B00782897 /* RestaurentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentTableViewController.swift; sourceTree = "<group>"; };
+		871CD48B28A68A0300782897 /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
+		871CD48D28A68A8000782897 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		871CD47328A4FC8400782897 /* HelloWorldTest */ = {
 			isa = PBXGroup;
 			children = (
+				871CD48A28A689DF00782897 /* FoodExample */,
 				871CD47428A4FC8400782897 /* AppDelegate.swift */,
 				871CD47628A4FC8400782897 /* SceneDelegate.swift */,
 				871CD47828A4FC8400782897 /* ViewController.swift */,
@@ -68,6 +73,15 @@
 				871CD48828A6522B00782897 /* RestaurentTableViewController.swift */,
 			);
 			path = HelloWorldTest;
+			sourceTree = "<group>";
+		};
+		871CD48A28A689DF00782897 /* FoodExample */ = {
+			isa = PBXGroup;
+			children = (
+				871CD48B28A68A0300782897 /* FoodTableViewController.swift */,
+				871CD48D28A68A8000782897 /* FoodTableViewCell.swift */,
+			);
+			path = FoodExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +157,10 @@
 			files = (
 				871CD47928A4FC8400782897 /* ViewController.swift in Sources */,
 				871CD47528A4FC8400782897 /* AppDelegate.swift in Sources */,
+				871CD48C28A68A0300782897 /* FoodTableViewController.swift in Sources */,
 				871CD48928A6522B00782897 /* RestaurentTableViewController.swift in Sources */,
 				871CD47728A4FC8400782897 /* SceneDelegate.swift in Sources */,
+				871CD48E28A68A8000782897 /* FoodTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
