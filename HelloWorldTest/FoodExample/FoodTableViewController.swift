@@ -9,15 +9,13 @@ import UIKit
 
 class FoodTableViewController: UITableViewController {
     
-    enum Section{
-        case all
-    }
     
-    var restaurantImages = ["cafedeadend", "homei", "teakha", "cafeloisl", "petiteoyster", "forkee", "posatelier", "bourkestreetbakery", "haigh", "palomino", "upstate", "traif", "graham", "waffleandwolf", "fiveleaves", "cafelore", "confessional", "barrafina", "donostia", "royaloak", "cask"]
     
-    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional","Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
+    var restaurent = RestaurantData()
+                           
     
-
+    
+        
     
     lazy var dataSource = configureDataSource()
     
@@ -30,32 +28,50 @@ class FoodTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        //tableView.rowHeight = UITableView.automaticDimension
+        
         tableView.dataSource = dataSource
-        var snapShot = NSDiffableDataSourceSnapshot<Section, String>()
+        var snapShot = NSDiffableDataSourceSnapshot<Section, Restaurant>()
         snapShot.appendSections([.all])
-        snapShot.appendItems(restaurantNames, toSection:.all)
+        snapShot.appendItems(restaurent.restaurants, toSection:.all)
         dataSource.apply(snapShot, animatingDifferences: false, completion: nil)
+        
+        //tableView.separatorStyle = .none
         
         
     }
 
     // MARK: - Table view data source
 
-    func configureDataSource() -> UITableViewDiffableDataSource<Section, String>{
+    func configureDataSource() -> UITableViewDiffableDataSource<Section, Restaurant>{
         
         let identifier = "foodCell"
-        let dataSource = UITableViewDiffableDataSource<Section, String>(tableView: tableView, cellProvider: { tableView,indexPath,restaurantNames in
+        let identifier2 = "favCell"
+        let dataSource = RestaurantDiffableDataSource(tableView: tableView, cellProvider: { tableView,indexPath,restaurants in
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-            cell.textLabel?.text = restaurantNames
-            cell.imageView?.image = UIImage(named: self.restaurantImages[indexPath.row])
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! FoodTableViewCell
+            cell.nameLabel.text = restaurants.name
+            cell.thumbnailImageView.image = UIImage(named: restaurants.image)
+            cell.locationLabel.text = restaurants.location
+            cell.typeLabel.text = restaurants.type
+            cell.favouriteImageView.isHidden = restaurants.isFavorite
+            //print(restaurants.isFavorite)
             return cell
         })
         
         return dataSource
         
     }
-
+    
+    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        restaurent.restaurants[indexPath.row].isFavorite = !restaurent.restaurants[indexPath.row].isFavorite
+        var cell = tableView.cellForRow(at: indexPath) as! FoodTableViewCell
+        cell.favouriteImageView.isHidden = !cell.favouriteImageView.isHidden
+        //tableView.reloadData()
+    }
+     */
+     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -66,15 +82,19 @@ class FoodTableViewController: UITableViewController {
     }
     */
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
     */
-
+    
+    
     /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -84,8 +104,10 @@ class FoodTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
-
+    
+     */
+     
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
