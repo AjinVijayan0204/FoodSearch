@@ -63,6 +63,32 @@ class FoodTableViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        guard let restuarent = self.dataSource.itemIdentifier(for: indexPath)
+        else{
+            return UISwipeActionsConfiguration()
+        }
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completion) in
+            var snapShot = self.dataSource.snapshot()
+            snapShot.deleteItems([restuarent])
+            self.dataSource.apply(snapShot, animatingDifferences: false, completion: nil)
+            
+            completion(true)
+        }
+        
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completion) in
+            let defaultText = "Selected text name" + restuarent.name
+            
+            //add the data so that it can be shared or copied to clipboard etc..
+            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+            
+        }
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [shareAction,deleteAction])
+        return swipeConfiguration
+    }
     /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        restaurent.restaurants[indexPath.row].isFavorite = !restaurent.restaurants[indexPath.row].isFavorite

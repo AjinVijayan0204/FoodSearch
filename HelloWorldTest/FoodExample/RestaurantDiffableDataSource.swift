@@ -19,6 +19,7 @@ class RestaurantDiffableDataSource: UITableViewDiffableDataSource<Section, Resta
     
     
     //MARK: - For delete action
+    /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete{
@@ -29,4 +30,9 @@ class RestaurantDiffableDataSource: UITableViewDiffableDataSource<Section, Resta
             }
         }
     }
+     */
+    
+    //MARK: - Swipe cell actions
+    
+    
 }
