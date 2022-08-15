@@ -36,7 +36,12 @@ class FoodTableViewController: UITableViewController {
         snapShot.appendItems(restaurent.restaurants, toSection:.all)
         dataSource.apply(snapShot, animatingDifferences: false, completion: nil)
         
+        
+        // no lines between the row
         //tableView.separatorStyle = .none
+        
+        //large Title
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         
     }
@@ -63,6 +68,8 @@ class FoodTableViewController: UITableViewController {
         
     }
     
+    //MARK: - elements in swipe action
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         guard let restuarent = self.dataSource.itemIdentifier(for: indexPath)
@@ -70,6 +77,7 @@ class FoodTableViewController: UITableViewController {
             return UISwipeActionsConfiguration()
         }
         
+        //deleting the row
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completion) in
             var snapShot = self.dataSource.snapshot()
             snapShot.deleteItems([restuarent])
@@ -78,14 +86,36 @@ class FoodTableViewController: UITableViewController {
             completion(true)
         }
         
+        //sharing the item
+        //MARK: - activity controller for sharing and all
         let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completion) in
-            let defaultText = "Selected text name" + restuarent.name
+            let defaultText = "Selected text name " + restuarent.name
+            
+            var activityAlertController : UIActivityViewController
             
             //add the data so that it can be shared or copied to clipboard etc..
-            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-            self.present(activityController, animated: true, completion: nil)
+            if let image = UIImage(named: restuarent.image){
+                activityAlertController = UIActivityViewController(activityItems: [defaultText,image], applicationActivities: nil)
+            }else{
+                activityAlertController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            }
+           
+            //MARK: - alerts in iPAD, popover controller
+            //pop over controler is required in ipad
+            // need to anchor the popover at a place
+            if let popoverController = activityAlertController.popoverPresentationController{
+                if let cell = self.tableView.cellForRow(at: indexPath){
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
+            
+            self.present(activityAlertController, animated: true, completion: nil)
             
         }
+        shareAction.image = UIImage(systemName: "square.and.arrow.up")
+        deleteAction.image = UIImage(systemName: "trash")
+        
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [shareAction,deleteAction])
         return swipeConfiguration
     }
@@ -149,14 +179,22 @@ class FoodTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toDetailScreen"{
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let destinationVC = segue.destination as! RestaurentDetailViewController
+                destinationVC.restaurent = self.restaurent.restaurants[indexPath.row]
+            }
+        }
+        
     }
-    */
+    
 
 }

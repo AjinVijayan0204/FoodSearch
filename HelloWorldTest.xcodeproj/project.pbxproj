@@ -19,6 +19,12 @@
 		871CD49028A7AC2300782897 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD48F28A7AC2300782897 /* Restaurant.swift */; };
 		871CD49328A7B6EF00782897 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD49228A7B6EF00782897 /* RestaurantData.swift */; };
 		871CD49528A7D77700782897 /* RestaurantDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD49428A7D77700782897 /* RestaurantDiffableDataSource.swift */; };
+		871CD49728A815E000782897 /* RestaurentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD49628A815E000782897 /* RestaurentDetailViewController.swift */; };
+		871CD49928AA3A1800782897 /* RestaurentDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD49828AA3A1800782897 /* RestaurentDetailHeaderView.swift */; };
+		871CD49B28AA974100782897 /* RestaurentDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD49A28AA974100782897 /* RestaurentDetailTextCell.swift */; };
+		871CD49D28AA9A7700782897 /* RestaurentDetailTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD49C28AA9A7700782897 /* RestaurentDetailTwoCell.swift */; };
+		871CD4A028AAADDD00782897 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871CD49F28AAADDD00782897 /* MapKit.framework */; };
+		871CD4A228AAB42700782897 /* RestaurentDetaillMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CD4A128AAB42700782897 /* RestaurentDetaillMapCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		871CD48F28A7AC2300782897 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		871CD49228A7B6EF00782897 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		871CD49428A7D77700782897 /* RestaurantDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDiffableDataSource.swift; sourceTree = "<group>"; };
+		871CD49628A815E000782897 /* RestaurentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentDetailViewController.swift; sourceTree = "<group>"; };
+		871CD49828AA3A1800782897 /* RestaurentDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentDetailHeaderView.swift; sourceTree = "<group>"; };
+		871CD49A28AA974100782897 /* RestaurentDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentDetailTextCell.swift; sourceTree = "<group>"; };
+		871CD49C28AA9A7700782897 /* RestaurentDetailTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentDetailTwoCell.swift; sourceTree = "<group>"; };
+		871CD49F28AAADDD00782897 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		871CD4A128AAB42700782897 /* RestaurentDetaillMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentDetaillMapCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871CD4A028AAADDD00782897 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +67,7 @@
 			children = (
 				871CD47328A4FC8400782897 /* HelloWorldTest */,
 				871CD47228A4FC8400782897 /* Products */,
+				871CD49E28AAADDD00782897 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +102,11 @@
 				871CD48B28A68A0300782897 /* FoodTableViewController.swift */,
 				871CD48D28A68A8000782897 /* FoodTableViewCell.swift */,
 				871CD49428A7D77700782897 /* RestaurantDiffableDataSource.swift */,
+				871CD49628A815E000782897 /* RestaurentDetailViewController.swift */,
+				871CD49828AA3A1800782897 /* RestaurentDetailHeaderView.swift */,
+				871CD49A28AA974100782897 /* RestaurentDetailTextCell.swift */,
+				871CD49C28AA9A7700782897 /* RestaurentDetailTwoCell.swift */,
+				871CD4A128AAB42700782897 /* RestaurentDetaillMapCell.swift */,
 			);
 			path = FoodExample;
 			sourceTree = "<group>";
@@ -99,6 +118,14 @@
 				871CD49228A7B6EF00782897 /* RestaurantData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		871CD49E28AAADDD00782897 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				871CD49F28AAADDD00782897 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,11 +202,16 @@
 				871CD47928A4FC8400782897 /* ViewController.swift in Sources */,
 				871CD47528A4FC8400782897 /* AppDelegate.swift in Sources */,
 				871CD49328A7B6EF00782897 /* RestaurantData.swift in Sources */,
+				871CD49928AA3A1800782897 /* RestaurentDetailHeaderView.swift in Sources */,
 				871CD48C28A68A0300782897 /* FoodTableViewController.swift in Sources */,
+				871CD49728A815E000782897 /* RestaurentDetailViewController.swift in Sources */,
 				871CD49028A7AC2300782897 /* Restaurant.swift in Sources */,
+				871CD49D28AA9A7700782897 /* RestaurentDetailTwoCell.swift in Sources */,
 				871CD48928A6522B00782897 /* RestaurentTableViewController.swift in Sources */,
+				871CD4A228AAB42700782897 /* RestaurentDetaillMapCell.swift in Sources */,
 				871CD47728A4FC8400782897 /* SceneDelegate.swift in Sources */,
 				871CD49528A7D77700782897 /* RestaurantDiffableDataSource.swift in Sources */,
+				871CD49B28AA974100782897 /* RestaurentDetailTextCell.swift in Sources */,
 				871CD48E28A68A8000782897 /* FoodTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
